@@ -3,8 +3,6 @@ import {
     Container,
     FormContent,
     InputContainer,
-    InputContent,
-    Input,
     HelperText,
     Title,
     Textarea,
@@ -12,6 +10,7 @@ import {
     Button,
     RedirectText
 } from './styles';
+import Input from '../../../../components/Inputs';
 
 interface props {
     handleToggleChangeComponent(): void;
@@ -22,41 +21,26 @@ const SignUp: React.FC<props> = ({ handleToggleChangeComponent }) => {
             <Title>Cadastre-se</Title>
             <FormContent>
                 <InputContainer>
-                    <InputContent>
-                        <Input type="text" name="username" placeholder="Usuário" />
-                    </InputContent>
-                    <InputContent>
-                        <Input type="text" name="password" placeholder="Senha" />
-                    </InputContent>
+                    <Input type="text" name="username" placeholder="Usuário" />
+                    <Input type="text" name="password" placeholder="Senha" />
                 </InputContainer>
                 <InputContainer>
-                    <InputContent>
-                        <Input type="text" name="first_name" placeholder="Nome" />
-                    </InputContent>
-                    <InputContent>
-                        <Input type="text" name="last_name" placeholder="Sobrenome" />
-                    </InputContent>
+                    <Input type="text" name="first_name" placeholder="Nome" />
+                    <Input type="text" name="last_name" placeholder="Sobrenome" />
                 </InputContainer>
                 <InputContainer>
-                    <InputContent>
-                        <Input type="text" name="jr_company" placeholder="Empresa Jr." />
-                    </InputContent>
-                    <InputContent>
-                        <Input type="text" name="office" placeholder="Cargo" />
-                    </InputContent>
+                    <Input type="text" name="jr_company" placeholder="Empresa Jr." />
+                    <Input type="text" name="office" placeholder="Cargo" />
                 </InputContainer>
                 <InputContainer>
-                    <InputContent>
-                        <Input type="text" name="core" placeholder="Núcleo" />
-                    </InputContent>
-                    <InputContent>
-                        <Input type="text" name="ingress_year" placeholder="Ano de ingresso" />
+                    <Input type="text" name="core" placeholder="Núcleo" />
+                    <Input type="text" name="ingress_year" placeholder="Ano de ingresso">
                         <HelperText>(Ano em que você entrou na EJ.)</HelperText>
-                    </InputContent>
+                    </Input>
                 </InputContainer>
-                <InputContent>
+                {/* <InputContent>
                     <Textarea name="bio" placeholder="Biografia..."></Textarea>
-                </InputContent>
+                </InputContent> */}
                 <ButtonContainer>
                     <Button>Cadastrar</Button>
                     <RedirectText onClick={handleToggleChangeComponent}>Já possui uma conta? Faça seu Login.</RedirectText>

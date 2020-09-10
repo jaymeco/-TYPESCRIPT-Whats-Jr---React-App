@@ -75,7 +75,7 @@ function Home() {
                 <TextBanner>{!isChanged? 'Você é de uma Empresa Jr. e ainda não está cadastrado ?': 'Se você já faz parte dessa incrível comunidade, basta você entrar !'}</TextBanner>
                 <ButtonBanner onClick={handleToggleChangeComponent}>{!isChanged? 'Cadastrar': 'Login'}</ButtonBanner>
             </BannerContainer>
-            <ModalForgot/>
+            {/* <ModalForgot/> */}
         </Container>
     );
 }

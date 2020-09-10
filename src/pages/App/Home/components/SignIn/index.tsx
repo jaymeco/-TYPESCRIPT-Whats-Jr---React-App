@@ -2,14 +2,13 @@ import React from 'react';
 import {
     Container,
     FormContent,
-    InputContent,
-    Input,
     ButtonContainer,
     Button,
     TextForgot,
     Title,
     RedirectText
 } from './styles';
+import Input from '../../../../components/Inputs';
 
 interface props {
     handleToggleChangeComponent(): void;
@@ -20,12 +19,18 @@ const SignIn: React.FC<props> = ({ handleToggleChangeComponent }) => {
         <Container id="signin">
             <FormContent>
                 <Title>Faça seu Login</Title>
-                <InputContent>
-                    <Input type="text" name="email" placeholder="E-mail ou Usuário" />
-                </InputContent>
-                <InputContent>
-                    <Input type="password" name="password" placeholder="Senha" />
-                </InputContent>
+                <Input
+                    type="text"
+                    name="email"
+                    placeholder="E-mail ou Usuário"
+                />
+
+                <Input
+                    type="password"
+                    name="password"
+                    placeholder="Senha"
+                />
+                
                 <ButtonContainer>
                     <Button>Entrar</Button>
                     <TextForgot>Esqueceu sua senha?</TextForgot>
