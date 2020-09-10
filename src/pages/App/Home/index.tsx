@@ -12,6 +12,7 @@ import logoWhiteImg from '../../../assets/images/logo-wihte.svg';
 
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
+import ModalForgot from '../../components/ModalForgot';
 
 function Home() {
     const [isChanged, setIsChaged] = useState(false);
@@ -74,6 +75,7 @@ function Home() {
                 <TextBanner>{!isChanged? 'Você é de uma Empresa Jr. e ainda não está cadastrado ?': 'Se você já faz parte dessa incrível comunidade, basta você entrar !'}</TextBanner>
                 <ButtonBanner onClick={handleToggleChangeComponent}>{!isChanged? 'Cadastrar': 'Login'}</ButtonBanner>
             </BannerContainer>
+            <ModalForgot/>
         </Container>
     );
 }
