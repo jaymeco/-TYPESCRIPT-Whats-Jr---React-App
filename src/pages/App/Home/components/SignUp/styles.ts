@@ -101,18 +101,6 @@ export const HelperText = styled.p`
     }
 `;
 
-export const Textarea = styled.textarea`
-    width: 100%;
-    height: 15vh;
-    resize: none;
-    border: none;
-    outline: none;
-    background: var(--background-primary);
-    border-radius: 25px;
-    padding: 1.5rem;
-    color: var(--text-base-primary);
-`;
-
 export const RedirectText = styled.p`
     color: var(--text-base-dark);
     font-size: 1.7rem;

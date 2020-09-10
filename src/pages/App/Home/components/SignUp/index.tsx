@@ -5,12 +5,12 @@ import {
     InputContainer,
     HelperText,
     Title,
-    Textarea,
     ButtonContainer,
     Button,
     RedirectText
 } from './styles';
 import Input from '../../../../components/Inputs';
+import Textarea from '../../../../components/Textarea';
 
 interface props {
     handleToggleChangeComponent(): void;
@@ -38,9 +38,10 @@ const SignUp: React.FC<props> = ({ handleToggleChangeComponent }) => {
                         <HelperText>(Ano em que você entrou na EJ.)</HelperText>
                     </Input>
                 </InputContainer>
-                {/* <InputContent>
-                    <Textarea name="bio" placeholder="Biografia..."></Textarea>
-                </InputContent> */}
+                <Textarea
+                    name="bio"
+                    placeholder="Biografia..."
+                ></Textarea>
                 <ButtonContainer>
                     <Button>Cadastrar</Button>
                     <RedirectText onClick={handleToggleChangeComponent}>Já possui uma conta? Faça seu Login.</RedirectText>
