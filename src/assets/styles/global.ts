@@ -10,24 +10,30 @@ export default createGlobalStyle`
     :root{
         font-size: 60%;
 
-        --background-primary: "#F0F0F0";
-        --background-secondary: "#F5F5F5";
-        --background-light: "#FFFFFF";
-        --text-base-light: "#9D9D9D";
-        --text-base-dark: "#555555";
-        --color-primary: "#3C7BE6";
-        --color-primary-dark: "#354AFC";
-        --color-white: "#FFFFFF";
-        --color-secondary: "#192AB8";
-        --color-red-primary: "#D40C0C";
+        --background-primary: #F0F0F0;
+        --background-secondary: #F5F5F5;
+        --background-light: #FFFFFF;
+        --text-base-light: #9D9D9D;
+        --text-base-dark: #555555;
+        --color-primary: #3C7BE6;
+        --color-primary-dark: #354AFC;
+        --color-white: #FFFFFF;
+        --color-secondary: #192AB8;
+        --color-red-primary: #D40C0C;
     }
     html,body{
         min-height: 100%;
-        background: var(--color-primary);
+        background: var(--background-light);
     }
 
     *,button, input, textarea{
         font-family: Barlow;
     }
 
+    @media(min-width: 700px){
+        :root{
+            font-size: 62.5%;
+
+        }
+    }
 `;
