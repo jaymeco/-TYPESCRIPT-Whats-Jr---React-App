@@ -11,6 +11,7 @@ import {
 } from './styles';
 import Input from '../../../../components/Inputs';
 import Textarea from '../../../../components/Textarea';
+import Select from '../../../../components/Select';
 
 interface props {
     handleToggleChangeComponent(): void;
@@ -29,8 +30,22 @@ const SignUp: React.FC<props> = ({ handleToggleChangeComponent }) => {
                     <Input type="text" name="last_name" placeholder="Sobrenome" />
                 </InputContainer>
                 <InputContainer>
-                    <Input type="text" name="jr_company" placeholder="Empresa Jr." />
-                    <Input type="text" name="office" placeholder="Cargo" />
+                    <Select
+                        placeholder="Empresa Jr."
+                        name="company"
+                        optionsCompany={[
+                            {id: '123', name: 'Praxis - Empresa Jr.', theme_color: '#ffcf00'}
+                        ]}
+                    />
+                    <Select
+                        placeholder="Cargo"
+                        name="office"
+                        options={[
+                            'Diretor Presidente',
+                            'Projetista',
+                            'Gerente Executivo'
+                        ]}
+                    />
                 </InputContainer>
                 <InputContainer>
                     <Input type="text" name="core" placeholder="Núcleo" />
