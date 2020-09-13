@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { FormEvent } from 'react';
 import {
     Container,
     FormContent,
@@ -9,15 +9,25 @@ import {
     RedirectText
 } from './styles';
 import Input from '../../../../components/Inputs';
+import { useHistory } from "react-router-dom";
+
+
 interface props {
     handleToggleChangeComponent(): void;
     handleToggleModal:()=> void;
 }
 
 const SignIn: React.FC<props> = ({ handleToggleChangeComponent, handleToggleModal }) => {
+    const history = useHistory();
+    
+    function handleSubmitForm(event: FormEvent){
+        event.preventDefault();
+        history.push('/dashboard')
+    }
+
     return (
         <Container id="signin">
-            <FormContent>
+            <FormContent onSubmit={handleSubmitForm}>
                 <Title>Faça seu Login</Title>
                 <Input
                     type="text"
