@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
     width: 100%;
     height: 8vh;
     background: var(--color-primary-dark);
     display: flex;
     align-items: center;
     padding: 0 1.8rem;
-    position: fixed;
+    position: sticky;
     top: 0;
 `;
 

@@ -8,10 +8,10 @@ function Home(){
     return(
         <>
             <MobileHeader/>
-            <MobileBar/>
             <Container>
-
+                <h1>ola mundo</h1>
             </Container>
+            <MobileBar/>
         </>
     );
 }
