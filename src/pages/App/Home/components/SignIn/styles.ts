@@ -85,6 +85,11 @@ export const TextForgot = styled.p`
     font-size: 1.7rem;
     color: var(--text-base-dark);
     margin-top: 1.2rem;
+    transition: color .3s;
+    &:hover{
+        color: var(--color-primary-dark);
+        cursor: pointer;
+    }
 `;
 
 export const InputContainer = styled.div`

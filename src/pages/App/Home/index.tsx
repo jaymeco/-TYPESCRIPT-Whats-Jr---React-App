@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
     Container,
     Logo,
@@ -12,10 +12,11 @@ import logoWhiteImg from '../../../assets/images/logo-wihte.svg';
 
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
-import ModalForgot from '../../components/ModalForgot';
+import ModalForgot, { ModalHandles } from '../../components/ModalForgot';
 
 function Home() {
     const [isChanged, setIsChaged] = useState(false);
+    const modalRef = useRef<ModalHandles>(null);
 
     function handleToggleChangeComponent() {
         const banner = document.getElementById('banner');
@@ -60,12 +61,16 @@ function Home() {
 
     }
 
+    const handleToggleModal = useCallback(()=>{
+        modalRef.current?.toggleModal();
+    }, [])
+
     return (
         <Container>
             <Logo src={!isChanged ? logoPrimaryDarkImg : logoWhiteImg} alt="Logo da WhatsJr." />
             {
                 !isChanged ? (
-                    <SignIn handleToggleChangeComponent={handleToggleChangeComponent} />
+                    <SignIn handleToggleModal={handleToggleModal} handleToggleChangeComponent={handleToggleChangeComponent} />
                 ) : (
                         <SignUp handleToggleChangeComponent={handleToggleChangeComponent} />
                     )
@@ -75,7 +80,7 @@ function Home() {
                 <TextBanner>{!isChanged? 'Você é de uma Empresa Jr. e ainda não está cadastrado ?': 'Se você já faz parte dessa incrível comunidade, basta você entrar !'}</TextBanner>
                 <ButtonBanner onClick={handleToggleChangeComponent}>{!isChanged? 'Cadastrar': 'Login'}</ButtonBanner>
             </BannerContainer>
-            {/* <ModalForgot/> */}
+            <ModalForgot ref={modalRef}/>
         </Container>
     );
 }

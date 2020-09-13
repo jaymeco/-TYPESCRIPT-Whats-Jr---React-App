@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
     Container,
     FormContent,
@@ -9,12 +9,12 @@ import {
     RedirectText
 } from './styles';
 import Input from '../../../../components/Inputs';
-
 interface props {
     handleToggleChangeComponent(): void;
+    handleToggleModal:()=> void;
 }
 
-const SignIn: React.FC<props> = ({ handleToggleChangeComponent }) => {
+const SignIn: React.FC<props> = ({ handleToggleChangeComponent, handleToggleModal }) => {
     return (
         <Container id="signin">
             <FormContent>
@@ -33,7 +33,7 @@ const SignIn: React.FC<props> = ({ handleToggleChangeComponent }) => {
                 
                 <ButtonContainer>
                     <Button>Entrar</Button>
-                    <TextForgot>Esqueceu sua senha?</TextForgot>
+                    <TextForgot onClick={handleToggleModal}>Esqueceu sua senha?</TextForgot>
                     <RedirectText onClick={handleToggleChangeComponent}>Não possui uma conta? Cadastre-se</RedirectText>
                 </ButtonContainer>
             </FormContent>
