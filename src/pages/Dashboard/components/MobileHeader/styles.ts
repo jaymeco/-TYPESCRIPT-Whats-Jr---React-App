@@ -9,6 +9,9 @@ export const Container = styled.header`
     padding: 0 1.8rem;
     position: sticky;
     top: 0;
+    @media(min-width: 700px){
+        display: none; 
+    }
 `;
 
 export const Avatar = styled.img`

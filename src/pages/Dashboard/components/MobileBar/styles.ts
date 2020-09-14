@@ -11,6 +11,10 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
+    @media(min-width: 700px){
+        display: none; 
+    }
 `;
 
 export const BarButton = styled.button`
