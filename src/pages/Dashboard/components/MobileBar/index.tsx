@@ -1,4 +1,3 @@
-import { SSL_OP_NO_TLSv1_1 } from 'constants';
 import React from 'react';
 import { BarButton, Container } from './styles';
 import { MdHome, MdPeople, MdExplore, MdNotifications, MdPerson } from 'react-icons/md';
